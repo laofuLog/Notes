@@ -1,5 +1,7 @@
 # AssetBundle包
 
+![AB包](https://s1.ax1x.com/2020/04/24/J0Xiiq.md.png)
+
 ## AssetBundle资源管理
 
 - 之前很多动态资源都放在`Resource`文件夹下，但是当Unity项目打包出去的时候`Resource`文件夹下的资源都会被打包出去

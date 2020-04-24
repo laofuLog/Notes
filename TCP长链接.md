@@ -1,10 +1,16 @@
 # TCP长链接
 
-![TCP-IP模型](d:\desk\上课笔记\资料图\网络模型\TCP-IP模型.png)
+![TCP-IP模型](https://s1.ax1x.com/2020/04/24/J0XVQU.md.png)
 
 - 网络层IP协议，找到需要链接的IP地址
+
 - TCP/UDP协议一般处于传输层，用于数据传递
+
 - Http协议处于应用层
+
+- TCP和UDP区别
+
+  ![TCP和UDP](https://s1.ax1x.com/2020/04/24/J0XCon.jpg)
 
 ## Socket套接字
 
@@ -84,6 +90,8 @@ public class TestThread : MonoBehaviour
 
 ### **链接（三次握手）**
 
+![三次握手](https://s1.ax1x.com/2020/04/24/J0OzLQ.md.png)
+
 - 链接可以写在脚本的`Start`函数中
 
 ```csharp
@@ -113,6 +121,8 @@ void _EndConnect(IAsyncResult ar)
 - 异步链接就不会占用主线程，万一链接时间过长就不会卡掉程序
 
 ### **断开（四次挥手）**
+
+![四次挥手](https://s1.ax1x.com/2020/04/24/J0X9ds.md.png)
 
 - 断开可以写在脚本的`OnDestroy`周期函数中
 
@@ -196,7 +206,7 @@ string finalData = System.Text.Encoding.UTF8.GetString(data);
 
 - 字节序，针对数字，字符串是没有什么顺序问题的
 
-![字节序](d:\desk\上课笔记\资料图\字节序.jpg)
+![字节序](https://s1.ax1x.com/2020/04/24/J0XeL4.jpg)
 
 - 大端字节序：数据的前位字节，放在内存低地址位，后位字节，放在高内存地址位，符合人类的思维方式
 - 小端字节序：将数字的后位字节，放在内存栈的低地址位，前位字节放在高地址位，不符合人类思维方式，但是计算机处理这样的内存更快
@@ -208,7 +218,7 @@ string finalData = System.Text.Encoding.UTF8.GetString(data);
 - 包头：记录有关于整个数据包的信息，需要加密
 - 包体：原始数据，需要加密，防止泄露，RC4方式
 
-![网络通讯](d:\desk\上课笔记\资料图\网络通讯.jpg)
+![网络通讯](https://s1.ax1x.com/2020/04/24/J0XZyF.md.jpg)
 
 - 数据打包：对原始数据，添加协议头的过程，就是数据打包的过程（前四个字节记录数据包总长度，后面拼接包体内容，成为一个数据包）
   - 发送一个“分手”字符串的时候，打包为（10分手）
